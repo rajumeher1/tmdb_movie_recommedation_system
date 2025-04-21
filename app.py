@@ -42,19 +42,22 @@ movie = st.selectbox(
 )
 
 if st.button('Find Similar Movies'):
-    st.markdown(f":orange[****Here are the recommended movies you should watch similar to '{movie}'****]")
-    recommended_list, poster_path_list = recommend(movie)
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[0]}", caption=f"{recommended_list[0]}")
-    with col2:
-        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[1]}", caption=f"{recommended_list[1]}")
-    with col3:
-        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[2]}", caption=f"{recommended_list[2]}")
-    with col4:
-        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[3]}", caption=f"{recommended_list[3]}")
-    with col5:
-        st.image(f"https://image.tmdb.org/t/p/w500/{poster_path_list[4]}", caption=f"{recommended_list[4]}")
+    if movie == None:
+        st.write("Please enter a movie name above so I can recommend similar ones you might enjoy!")
+    else:
+        st.markdown(f":orange[****Check out these movies that are similar to '{movie}'****]")
+        recommended_list, poster_path_list = recommend(movie)
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1:
+            st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[0]}", caption=f"{recommended_list[0]}")
+        with col2:
+            st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[1]}", caption=f"{recommended_list[1]}")
+        with col3:
+            st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[2]}", caption=f"{recommended_list[2]}")
+        with col4:
+            st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[3]}", caption=f"{recommended_list[3]}")
+        with col5:
+            st.image(f"https://image.tmdb.org/t/p/w500/{poster_path_list[4]}", caption=f"{recommended_list[4]}")
 
 
 
