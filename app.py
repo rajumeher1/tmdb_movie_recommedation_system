@@ -46,20 +46,15 @@ if st.button('Find Similar Movies'):
     recommended_list, poster_path_list = recommend(movie)
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        st.write(recommended_list[0])
-        st.image(f"https://image.tmdb.org/t/p/w154{poster_path_list[0]}")
+        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[0]}", caption=f"{recommended_list[0]}")
     with col2:
-        st.write(recommended_list[1])
-        st.image(f"https://image.tmdb.org/t/p/w154{poster_path_list[1]}")
+        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[1]}", caption=f"{recommended_list[1]}")
     with col3:
-        st.write(recommended_list[2])
-        st.image(f"https://image.tmdb.org/t/p/w154{poster_path_list[2]}")
+        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[2]}", caption=f"{recommended_list[2]}")
     with col4:
-        st.write(recommended_list[3])
-        st.image(f"https://image.tmdb.org/t/p/w154{poster_path_list[3]}")
+        st.image(f"https://image.tmdb.org/t/p/w500{poster_path_list[3]}", caption=f"{recommended_list[3]}")
     with col5:
-        st.write(recommended_list[4])
-        st.image(f"https://image.tmdb.org/t/p/w154{poster_path_list[4]}")
+        st.image(f"https://image.tmdb.org/t/p/w500/{poster_path_list[4]}", caption=f"{recommended_list[4]}")
 
 
 
